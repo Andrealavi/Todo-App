@@ -1,8 +1,7 @@
 const emailInput = document.querySelector("#email");
 const passwordInput = document.querySelector("#password");
+const usernameInput = document.querySelector("#username");
 const registrationButton = document.querySelector("#registrationButton");
-const emailDiv = document.querySelector("#emailDiv");
-const passwordDiv = document.querySelector("#passwordDiv");
 
 registrationButton.disabled = true;
 let validEmail, validPassword;
@@ -21,7 +20,7 @@ const emailValidation = () => {
 	} else {
 		emailInput.classList.remove("validEmail");
 		emailInput.classList.add("invalidEmail");
-		validEmail = falses;
+		validEmail = false;
 	}
 };
 
@@ -44,7 +43,8 @@ const passwordValidation = () => {
 };
 
 const buttonValidation = () => {
-	if (validEmail && validPassword) registrationButton.disabled = false;
+	if (validEmail && validPassword && usernameInput.value !== "")
+		registrationButton.disabled = false;
 	else registrationButton.disabled = true;
 };
 
@@ -65,5 +65,13 @@ passwordInput.addEventListener("change", () => {
 
 passwordInput.addEventListener("keydown", () => {
 	passwordValidation();
+	buttonValidation();
+});
+
+usernameInput.addEventListener("change", () => {
+	buttonValidation();
+});
+
+usernameInput.addEventListener("keydown", () => {
 	buttonValidation();
 });

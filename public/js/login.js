@@ -1,8 +1,6 @@
 const emailInput = document.querySelector("#email");
 const passwordInput = document.querySelector("#password");
 const loginButton = document.querySelector("#loginButton");
-const emailDiv = document.querySelector("#emailDiv");
-const passwordDiv = document.querySelector("#passwordDiv");
 
 loginButton.disabled = true;
 let validEmail, validPassword;
