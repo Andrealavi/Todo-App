@@ -75,3 +75,21 @@ usernameInput.addEventListener("change", () => {
 usernameInput.addEventListener("keydown", () => {
 	buttonValidation();
 });
+
+registrationButton.addEventListener("click", e => {
+	e.preventDefault();
+
+	const data = {
+		username: usernameInput.value,
+		email: emailInput.value,
+		password: passwordInput.value,
+	};
+
+	fetch("http://localhost:8080/registration", {
+		method: "POST",
+		headers: {
+			"Content-Type": "application/json",
+		},
+		body: JSON.stringify(data),
+	}).then(res => (window.location.href = res.url));
+});

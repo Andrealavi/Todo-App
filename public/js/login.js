@@ -65,3 +65,18 @@ passwordInput.addEventListener("keydown", () => {
 	passwordValidation();
 	buttonValidation();
 });
+
+loginButton.addEventListener("click", () => {
+	const data = {
+		email: emailInput.value,
+		password: passwordInput.value,
+	};
+
+	fetch("http://localhost:8080/login", {
+		method: "POST",
+		headers: {
+			"Content-Type": "application/json",
+		},
+		body: JSON.stringify(data),
+	});
+});

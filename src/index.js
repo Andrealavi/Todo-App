@@ -1,6 +1,7 @@
 const express = require("express");
 const { join } = require("path");
 const hbs = require("hbs");
+const User = require("./models/user.js");
 
 const app = express();
 const PORT = 8080;
@@ -23,7 +24,21 @@ app.get("/", (req, res) => res.render("login"));
 
 app.get("/registration", (req, res) => res.render("registration"));
 
-app.get("/users/:id", (req, res) => res.render("users"));
+app.get("/homepage/:id", (req, res) => res.render("homepage"));
+
+app.post("/login", async (req, res) => {
+	const user = await User.newUser(req.body.email, req.body.password);
+});
+
+app.post("/registration", async (req, res) => {
+	const user = await new User().newUser(
+		req.body.username,
+		req.body.email,
+		req.body.password
+	);
+
+	res.status(301).redirect(`/homepage/${user.id}`);
+});
 
 app.listen(PORT, () => {
 	console.log(`Server is listening on port ${PORT}`);

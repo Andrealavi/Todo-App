@@ -1,0 +1,146 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap");
+
+html {
+	font-size: 16px;
+}
+
+body {
+	overflow: hidden;
+	font-family: "Noto Sans", sans-serif;
+	background-color: rgb(105, 40, 179);
+}
+
+#homepage {
+	height: 100vh;
+	width: 100vw;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#homepage h1 {
+	text-align: center;
+}
+
+#dashboard {
+	background: #f7f7f7;
+	border: none;
+	border-radius: 8px;
+	width: 650px;
+	box-shadow: 0px 0px 15px 1px rgb(54, 35, 65);
+}
+
+#dashboard form {
+	display: flex;
+	padding: 16px;
+}
+
+#dashboard input {
+	width: 100%;
+	border: none;
+	padding: 8px;
+	padding-left: 16px;
+	margin-left: 16px;
+	margin-right: 16px;
+	border-radius: 32px;
+	box-shadow: 0px 0px 4px 2px #dbd5d5;
+	font-size: 16px;
+}
+
+#dashboard .searchButton {
+	width: 30px;
+	height: 30px;
+	border: none;
+	padding: 4px;
+	background-color: #f7f7f7;
+}
+
+#dashboard .searchButton:hover {
+	border-radius: 8px;
+	background-color: #f7f7f7;
+	box-shadow: 0px 0px 20px 1px #c0bbbb;
+}
+
+#tasks-box {
+	justify-content: center;
+	align-items: center;
+	width: 550px;
+	height: 600px;
+	background: #eeeeee;
+	border-radius: 32px;
+	box-shadow: 0px 0px 5px 3px #c0bbbb;
+	margin: 48px;
+	padding-left: 8px;
+	overflow-y: scroll;
+}
+
+#tasks-box::-webkit-scrollbar {
+	width: 8px;
+	height: 550px;
+}
+
+#tasks-box::-webkit-scrollbar-track {
+	margin: 18px;
+}
+
+#tasks-box::-webkit-scrollbar-thumb {
+	background: #ccc8c8;
+	border-radius: 100px;
+}
+
+#tasks {
+	list-style: none;
+	font-weight: bold;
+	font-size: 18px;
+	padding: 0;
+	margin: 0;
+}
+
+#task {
+	width: 100%;
+	height: 50px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+#task:nth-child(even) {
+	background: #d5d6da;
+}
+
+#task ul li {
+	display: inline;
+	width: 100%;
+	margin-right: 8px;
+}
+
+#task ul {
+	list-style: none;
+	padding: 8px;
+	margin: 0;
+	margin-left: 16px;
+}
+
+#title {
+	max-width: 150px;
+	overflow-x: hidden;
+}
+
+#buttons {
+	display: inline;
+	float: right;
+}
+
+#buttons button {
+	border: none;
+	border-radius: 8px;
+	height: 30px;
+	width: 30px;
+	padding-left: 3px;
+}
+
+#buttons button:hover {
+	border: none;
+	box-shadow: 0px 0px 20px 1px #c0bbbb;
+	background-color: #eeeeee;
+}
