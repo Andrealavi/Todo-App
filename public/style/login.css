@@ -2,6 +2,13 @@
 
 html {
 	font-size: 16px;
+	box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+	box-sizing: inherit;
 }
 
 body {
@@ -31,7 +38,14 @@ input {
 	font-size: 14px;
 	padding: 8px;
 	margin-bottom: 16px;
-	box-shadow: 5px 5px 15px 0px rgb(221, 210, 210);
+	width: 100%;
+	box-sizing: inherit;
+	box-shadow: 0px 0px 15px 0px rgb(221, 210, 210);
+}
+
+input:focus {
+	outline: none;
+	box-shadow: 0px 0px 10px 4px rgb(221, 210, 210);
 }
 
 button {
@@ -42,10 +56,12 @@ button {
 	background: rgb(140, 66, 224);
 	color: #eee5e5;
 	font-size: 16px;
+	box-shadow: 0px 0px 8px 6px rgb(221, 210, 210);
 }
 
 button:disabled {
 	background-color: rgb(172, 146, 202);
+	box-shadow: none;
 }
 
 span {
@@ -76,7 +92,7 @@ span {
 	background: #f7f7fa;
 	border: none;
 	border-radius: 8px;
-	width: 250px;
+	width: 300px;
 	box-shadow: 0px 0px 15px 1px rgb(54, 35, 65);
 }
 
@@ -94,4 +110,11 @@ span {
 
 .invalidPassword {
 	border: 1px solid rgb(129, 12, 12);
+}
+
+#err {
+	font-size: 12px;
+	color: red;
+	text-align: left;
+	font-weight: bold;
 }

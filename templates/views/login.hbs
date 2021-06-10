@@ -1,40 +1,57 @@
-<!DOCTYPE html>
 <html>
-<head>
+	<head>
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="/style/login.css">
-    <title> Todo App</title>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" type="text/css" href="/style/login.css" />
+		<title> Todo App</title>
 
-</head>
+	</head>
 
-<body>
-    
-    <div id="login-box">
-        <div id="login-form">
+	<body>
 
-            <div id="heading">
-                <h1> Accedi <span> oppure <a href="http://localhost:8080/registration"> Crea un account </a></span> </h1>         
-            </div>
-            
+		<div id="login-box">
+			<div id="login-form">
 
-            <form>
-                <label for="email"> Email: </label>
-                <input type="text" id="email" name="email" placeholder="Inserisci l'email" required>
-                
+				<div id="heading">
+					<h1>
+						Accedi
+						<span>
+							oppure
+							<a href="http://localhost:8080/registration">
+								Crea un account
+							</a></span>
+					</h1>
+				</div>
 
-                <label for="password"> Password: </label>
-                <input type="password" id="password" placeholder="Inserisci la password" required>
-               
-                <br>
-                <br>
+				<form>
+					<label for="email"> Email: </label>
+					<input
+						type="text"
+						id="email"
+						name="email"
+						placeholder="Inserisci l'email"
+						required
+					/>
 
-                <button id="loginButton"> Accedi </button>
-            </form>
-        </div>
-    </div>
+					<label for="password"> Password: </label>
+					<input
+						type="password"
+						id="password"
+						placeholder="Inserisci la password"
+						required
+					/>
 
-    <script src="/js/login.js"></script>
-</body>
+					<br />
+					<br />
+
+					<p id="err"> {{message}} </p>
+
+					<button id="loginButton"> Accedi </button>
+				</form>
+			</div>
+		</div>
+
+		<script src="/js/login.js"></script>
+	</body>
 </html>

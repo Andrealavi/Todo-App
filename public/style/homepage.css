@@ -47,6 +47,11 @@ body {
 	font-size: 16px;
 }
 
+#dashboard input:focus {
+	outline: none;
+	box-shadow: 0px 0px 4px 4px #dbd5d5;
+}
+
 #dashboard .searchButton {
 	width: 30px;
 	height: 30px;
@@ -142,5 +147,4 @@ body {
 #buttons button:hover {
 	border: none;
 	box-shadow: 0px 0px 20px 1px #c0bbbb;
-	background-color: #eeeeee;
 }

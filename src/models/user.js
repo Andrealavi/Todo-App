@@ -33,6 +33,39 @@ class User {
 			});
 		});
 	};
+
+	login = async (email, password) => {
+		return new Promise((resolve, reject) => {
+			const insertion = `SELECT * FROM users WHERE email = "${email}"`;
+
+			db.query(insertion, (err, result) => {
+				if (err) reject(err);
+
+				if (result.length === 0)
+					resolve(`Nessun utente trovato con questa mail`);
+				else if (!bcrypt.compareSync(password, result[0].password))
+					resolve(`Password errata`);
+				else
+					resolve({
+						id: result[0].userId,
+						username: result[0].userId,
+					});
+			});
+		});
+	};
+
+	isUsed = async (columnName, columnValue) => {
+		return new Promise((resolve, reject) => {
+			const insertion = `SELECT * FROM users WHERE ${columnName} = "${columnValue}"`;
+
+			db.query(insertion, (err, result) => {
+				if (err) reject(err);
+
+				if (result.length === 0) resolve(true);
+				else resolve(false);
+			});
+		});
+	};
 }
 
 module.exports = User;

@@ -66,7 +66,9 @@ passwordInput.addEventListener("keydown", () => {
 	buttonValidation();
 });
 
-loginButton.addEventListener("click", () => {
+loginButton.addEventListener("click", e => {
+	e.preventDefault();
+
 	const data = {
 		email: emailInput.value,
 		password: passwordInput.value,
@@ -78,5 +80,5 @@ loginButton.addEventListener("click", () => {
 			"Content-Type": "application/json",
 		},
 		body: JSON.stringify(data),
-	});
+	}).then(res => (window.location.href = res.url));
 });
