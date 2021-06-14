@@ -18,10 +18,10 @@ class User {
 	newUser = async (username, email, password) => {
 		return new Promise((resolve, reject) => {
 			const userId = uuidv1();
-			const insertion = `INSERT INTO users (userId, username, email, password, token, tasks) VALUES ("${userId}", "${username}", "${email}", "${bcrypt.hashSync(
+			const insertion = `INSERT INTO users (userId, username, email, password, token) VALUES ("${userId}", "${username}", "${email}", "${bcrypt.hashSync(
 				password,
 				8
-			)}", "", '{}')`;
+			)}", "")`;
 
 			db.query(insertion, err => {
 				if (err) reject(err);

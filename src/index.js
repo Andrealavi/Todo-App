@@ -2,6 +2,7 @@ const express = require("express");
 const { join } = require("path");
 const hbs = require("hbs");
 const User = require("./models/user.js");
+const Task = require("./models/task.js");
 
 const app = express();
 const PORT = 8080;
@@ -37,7 +38,13 @@ app.get("/registration", (req, res) => {
 	else res.render("registration");
 });
 
-app.get("/homepage/:id", (req, res) => res.render("homepage"));
+app.get("/homepage/:id", async (req, res) => {
+	const tasks = await new Task().listTasks(req.params.id);
+
+	res.render("homepage", { tasks: tasks });
+});
+
+app.get("/homepage/:id/task", (req, res) => res.render("task"));
 
 app.post("/login", async (req, res) => {
 	const userLogin = await new User().login(req.body.email, req.body.password);
@@ -61,6 +68,16 @@ app.post("/registration", async (req, res) => {
 
 		res.redirect(`/homepage/${user.id}`);
 	}
+});
+
+app.post("/task", async (req, res) => {
+	await new Task().newTask(
+		req.body.title,
+		req.body.description,
+		req.body.userId
+	);
+
+	res.redirect(`/homepage/${req.body.userId}`);
 });
 
 app.listen(PORT, () => {

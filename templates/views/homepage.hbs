@@ -21,99 +21,168 @@
 						/></button>
 				</form>
 
+				<div id="userAndTask">
+					<button>
+						<svg
+							xmlns="http://www.w3.org/2000/svg"
+							x="0px"
+							y="0px"
+							width="30"
+							height="30"
+							viewBox="0 0 172 172"
+							style=" fill:#000000;"
+						><g
+								fill="none"
+								fill-rule="nonzero"
+								stroke="none"
+								stroke-width="1"
+								stroke-linecap="butt"
+								stroke-linejoin="miter"
+								stroke-miterlimit="10"
+								stroke-dasharray=""
+								stroke-dashoffset="0"
+								font-family="none"
+								font-weight="none"
+								font-size="none"
+								text-anchor="none"
+								style="mix-blend-mode: normal"
+							><path
+									d="M0,172v-172h172v172z"
+									fill="none"
+								></path><g fill="#9b59b6"><path
+										d="M86,21.5c-15.83216,0 -28.66667,12.8345 -28.66667,28.66667c0,15.83216 12.8345,28.66667 28.66667,28.66667c15.83216,0 28.66667,-12.8345 28.66667,-28.66667c0,-15.83216 -12.8345,-28.66667 -28.66667,-28.66667zM86,100.33333c-21.52867,0 -64.5,10.80733 -64.5,32.25v10.75c0,3.956 3.21067,7.16667 7.16667,7.16667h114.66667c3.956,0 7.16667,-3.21067 7.16667,-7.16667v-10.75c0,-21.44267 -42.97133,-32.25 -64.5,-32.25z"
+									></path></g></g></svg>
+					</button>
+					<button id="taskButton">
+						<svg
+							xmlns="http://www.w3.org/2000/svg"
+							x="0px"
+							y="0px"
+							width="30"
+							height="30"
+							viewBox="0 0 172 172"
+							style=" fill:#000000;"
+						><g
+								fill="none"
+								fill-rule="nonzero"
+								stroke="none"
+								stroke-width="1"
+								stroke-linecap="butt"
+								stroke-linejoin="miter"
+								stroke-miterlimit="10"
+								stroke-dasharray=""
+								stroke-dashoffset="0"
+								font-family="none"
+								font-weight="none"
+								font-size="none"
+								text-anchor="none"
+								style="mix-blend-mode: normal"
+							><path
+									d="M0,172v-172h172v172z"
+									fill="none"
+								></path><g fill="#9b59b6"><path
+										d="M86,14.33333c-39.5815,0 -71.66667,32.08517 -71.66667,71.66667c0,39.5815 32.08517,71.66667 71.66667,71.66667c39.5815,0 71.66667,-32.08517 71.66667,-71.66667c0,-39.5815 -32.08517,-71.66667 -71.66667,-71.66667zM114.66667,93.16667h-21.5v21.5h-14.33333v-21.5h-21.5v-14.33333h21.5v-21.5h14.33333v21.5h21.5z"
+									></path></g></g></svg>
+					</button>
+				</div>
+
 				<div id="tasks-box">
 					<ul id="tasks">
-						<li id="task">
-							<ul>
-								<li id="title">
-									dummy
-								</li>
-								<div id="buttons">
-									<li>
-										<button>
-											<img
-												src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABmJLR0QA/wD/AP+gvaeTAAABEElEQVRIie2SPU7DQBBG3yw5BOIAYIlLINHwU6N4IxqESG+qdEmXLklrW4gGES5gOW6IuAAdBXfBHhoUBWTHTlhRoHzdSKP3dmcGtvmXif20H9rMAzCu4VEnGSE6MFq0AcQlPLbJEKQHTG6mZ4FTQRncmaAK7kSwCv5rQR0clq7o/iLZXQcedZIRSE9Fx1XwhSD20/5HS17vLtODpnBRCVR03H08v13VawBMiyeAItd5nWQd+EJw/XD6roUeAVrk+hLZ2WFZc2yToagEwKQJHH4sOWon+2JkDuwo5rg7PXlbhtcttFZQJdkUXioACG3mGfLnr3IGXDWdeSMBfPvJHhu8vFFCm3mxn/adg7f503wCgqiB3Fam6fcAAAAASUVORK5CYII="
-											/>
-										</button>
+						{{#each tasks}}
+							<li id="task">
+								<ul>
+									<li id="title">
+										{{this.title}}
 									</li>
-									<li>
-										<button>
-											<svg
-												xmlns="http://www.w3.org/2000/svg"
-												x="0px"
-												y="0px"
-												width="24"
-												height="24"
-												viewBox="0 0 172 172"
-												style=" fill:#000000;"
-											><g
-													fill="none"
-													fill-rule="nonzero"
-													stroke="none"
-													stroke-width="1"
-													stroke-linecap="butt"
-													stroke-linejoin="miter"
-													stroke-miterlimit="10"
-													stroke-dasharray=""
-													stroke-dashoffset="0"
-													font-family="none"
-													font-weight="none"
-													font-size="none"
-													text-anchor="none"
-													style="mix-blend-mode: normal"
-												><path
-														d="M0,172v-172h172v172z"
+									<div id="buttons">
+										<li>
+											<button>
+												<img
+													src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABmJLR0QA/wD/AP+gvaeTAAABEElEQVRIie2SPU7DQBBG3yw5BOIAYIlLINHwU6N4IxqESG+qdEmXLklrW4gGES5gOW6IuAAdBXfBHhoUBWTHTlhRoHzdSKP3dmcGtvmXif20H9rMAzCu4VEnGSE6MFq0AcQlPLbJEKQHTG6mZ4FTQRncmaAK7kSwCv5rQR0clq7o/iLZXQcedZIRSE9Fx1XwhSD20/5HS17vLtODpnBRCVR03H08v13VawBMiyeAItd5nWQd+EJw/XD6roUeAVrk+hLZ2WFZc2yToagEwKQJHH4sOWon+2JkDuwo5rg7PXlbhtcttFZQJdkUXioACG3mGfLnr3IGXDWdeSMBfPvJHhu8vFFCm3mxn/adg7f503wCgqiB3Fam6fcAAAAASUVORK5CYII="
+												/>
+											</button>
+										</li>
+										<li>
+											<button>
+												<svg
+													xmlns="http://www.w3.org/2000/svg"
+													x="0px"
+													y="0px"
+													width="24"
+													height="24"
+													viewBox="0 0 172 172"
+													style=" fill:#000000;"
+												><g
 														fill="none"
-													></path><g
-														fill="#9b59b6"
+														fill-rule="nonzero"
+														stroke="none"
+														stroke-width="1"
+														stroke-linecap="butt"
+														stroke-linejoin="miter"
+														stroke-miterlimit="10"
+														stroke-dasharray=""
+														stroke-dashoffset="0"
+														font-family="none"
+														font-weight="none"
+														font-size="none"
+														text-anchor="none"
+														style="mix-blend-mode: normal"
 													><path
-															d="M35.83333,21.5c-7.91917,0 -14.33333,6.41417 -14.33333,14.33333v7.16667v7.16667v86c0,7.91917 6.41417,14.33333 14.33333,14.33333h65.73177c3.956,0 7.16667,-3.21067 7.16667,-7.16667c0,-3.956 -3.2035,-7.16667 -7.16667,-7.16667h-65.73177v-86h100.33333l-0.014,51.39844c0,3.956 3.21067,7.16667 7.16667,7.16667c3.956,0 7.16667,-3.21067 7.16667,-7.16667v-51.39844h0.014v-14.33333c0,-7.91917 -6.41417,-14.33333 -14.33333,-14.33333zM53.75,71.66667c-1.978,0 -3.58333,1.60533 -3.58333,3.58333v7.16667c0,1.978 1.60533,3.58333 3.58333,3.58333h7.16667c1.978,0 3.58333,-1.60533 3.58333,-3.58333v-7.16667c0,-1.978 -1.60533,-3.58333 -3.58333,-3.58333zM86,71.66667c-3.956,0 -7.16667,3.21067 -7.16667,7.16667c0,3.956 3.21067,7.16667 7.16667,7.16667h28.66667c3.956,0 7.16667,-3.21067 7.16667,-7.16667c0,-3.956 -3.21067,-7.16667 -7.16667,-7.16667zM53.75,100.33333c-1.978,0 -3.58333,1.60533 -3.58333,3.58333v7.16667c0,1.978 1.60533,3.58333 3.58333,3.58333h7.16667c1.978,0 3.58333,-1.60533 3.58333,-3.58333v-7.16667c0,-1.978 -1.60533,-3.58333 -3.58333,-3.58333zM86,100.33333c-3.956,0 -7.16667,3.21067 -7.16667,7.16667c0,3.956 3.21067,7.16667 7.16667,7.16667h7.16667v-14.33333zM107.5,107.5v14.33333l36.88314,36.88314l14.33333,-14.33333l-36.88314,-36.88314zM163.78353,149.4502l-14.33333,14.33333l7.16667,7.16667c1.3975,1.3975 3.66956,1.3975 5.06706,0l9.26628,-9.26628c1.3975,-1.40467 1.3975,-3.66956 0,-5.06706z"
-														></path></g></g></svg>
-										</button>
-									</li>
-									<li>
-										<button>
-											<svg
-												xmlns="http://www.w3.org/2000/svg"
-												x="0px"
-												y="0px"
-												width="24"
-												height="24"
-												viewBox="0 0 172 172"
-												style=" fill:#000000;"
-											><g
-													fill="none"
-													fill-rule="nonzero"
-													stroke="none"
-													stroke-width="1"
-													stroke-linecap="butt"
-													stroke-linejoin="miter"
-													stroke-miterlimit="10"
-													stroke-dasharray=""
-													stroke-dashoffset="0"
-													font-family="none"
-													font-weight="none"
-													font-size="none"
-													text-anchor="none"
-													style="mix-blend-mode: normal"
-												><path
-														d="M0,172v-172h172v172z"
+															d="M0,172v-172h172v172z"
+															fill="none"
+														></path><g
+															fill="#9b59b6"
+														><path
+																d="M35.83333,21.5c-7.91917,0 -14.33333,6.41417 -14.33333,14.33333v7.16667v7.16667v86c0,7.91917 6.41417,14.33333 14.33333,14.33333h65.73177c3.956,0 7.16667,-3.21067 7.16667,-7.16667c0,-3.956 -3.2035,-7.16667 -7.16667,-7.16667h-65.73177v-86h100.33333l-0.014,51.39844c0,3.956 3.21067,7.16667 7.16667,7.16667c3.956,0 7.16667,-3.21067 7.16667,-7.16667v-51.39844h0.014v-14.33333c0,-7.91917 -6.41417,-14.33333 -14.33333,-14.33333zM53.75,71.66667c-1.978,0 -3.58333,1.60533 -3.58333,3.58333v7.16667c0,1.978 1.60533,3.58333 3.58333,3.58333h7.16667c1.978,0 3.58333,-1.60533 3.58333,-3.58333v-7.16667c0,-1.978 -1.60533,-3.58333 -3.58333,-3.58333zM86,71.66667c-3.956,0 -7.16667,3.21067 -7.16667,7.16667c0,3.956 3.21067,7.16667 7.16667,7.16667h28.66667c3.956,0 7.16667,-3.21067 7.16667,-7.16667c0,-3.956 -3.21067,-7.16667 -7.16667,-7.16667zM53.75,100.33333c-1.978,0 -3.58333,1.60533 -3.58333,3.58333v7.16667c0,1.978 1.60533,3.58333 3.58333,3.58333h7.16667c1.978,0 3.58333,-1.60533 3.58333,-3.58333v-7.16667c0,-1.978 -1.60533,-3.58333 -3.58333,-3.58333zM86,100.33333c-3.956,0 -7.16667,3.21067 -7.16667,7.16667c0,3.956 3.21067,7.16667 7.16667,7.16667h7.16667v-14.33333zM107.5,107.5v14.33333l36.88314,36.88314l14.33333,-14.33333l-36.88314,-36.88314zM163.78353,149.4502l-14.33333,14.33333l7.16667,7.16667c1.3975,1.3975 3.66956,1.3975 5.06706,0l9.26628,-9.26628c1.3975,-1.40467 1.3975,-3.66956 0,-5.06706z"
+															></path></g></g></svg>
+											</button>
+										</li>
+										<li>
+											<button>
+												<svg
+													xmlns="http://www.w3.org/2000/svg"
+													x="0px"
+													y="0px"
+													width="24"
+													height="24"
+													viewBox="0 0 172 172"
+													style=" fill:#000000;"
+												><g
 														fill="none"
-													></path><g
-														fill="#9b59b6"
+														fill-rule="nonzero"
+														stroke="none"
+														stroke-width="1"
+														stroke-linecap="butt"
+														stroke-linejoin="miter"
+														stroke-miterlimit="10"
+														stroke-dasharray=""
+														stroke-dashoffset="0"
+														font-family="none"
+														font-weight="none"
+														font-size="none"
+														text-anchor="none"
+														style="mix-blend-mode: normal"
 													><path
-															d="M33.73372,23.59961l-10.13411,10.13411l52.26628,52.26628l-52.26628,52.26628l10.13411,10.13411l52.26628,-52.26628l52.26628,52.26628l10.13411,-10.13411l-52.26628,-52.26628l52.26628,-52.26628l-10.13411,-10.13411l-52.26628,52.26628z"
-														></path></g></g></svg>
-										</button>
-									</li>
-								</div>
-
-							</ul>
-						</li>
+															d="M0,172v-172h172v172z"
+															fill="none"
+														></path><g
+															fill="#9b59b6"
+														><path
+																d="M33.73372,23.59961l-10.13411,10.13411l52.26628,52.26628l-52.26628,52.26628l10.13411,10.13411l52.26628,-52.26628l52.26628,52.26628l10.13411,-10.13411l-52.26628,-52.26628l52.26628,-52.26628l-10.13411,-10.13411l-52.26628,52.26628z"
+															></path></g></g></svg>
+											</button>
+										</li>
+									</div>
+								</ul>
+							</li>
+						{{/each}}
 					</ul>
 				</div>
 
 			</div>
 		</div>
+
+		<script src="/js/homepage.js"></script>
+
 	</body>
 </html>
