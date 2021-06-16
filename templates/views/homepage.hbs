@@ -89,21 +89,21 @@
 				<div id="tasks-box">
 					<ul id="tasks">
 						{{#each tasks}}
-							<li id="task">
+							<li id="task" taskId={{this.id}}>
 								<ul>
 									<li id="title">
 										{{this.title}}
 									</li>
 									<div id="buttons">
 										<li>
-											<button>
+											<button id="completedButton">
 												<img
 													src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABmJLR0QA/wD/AP+gvaeTAAABEElEQVRIie2SPU7DQBBG3yw5BOIAYIlLINHwU6N4IxqESG+qdEmXLklrW4gGES5gOW6IuAAdBXfBHhoUBWTHTlhRoHzdSKP3dmcGtvmXif20H9rMAzCu4VEnGSE6MFq0AcQlPLbJEKQHTG6mZ4FTQRncmaAK7kSwCv5rQR0clq7o/iLZXQcedZIRSE9Fx1XwhSD20/5HS17vLtODpnBRCVR03H08v13VawBMiyeAItd5nWQd+EJw/XD6roUeAVrk+hLZ2WFZc2yToagEwKQJHH4sOWon+2JkDuwo5rg7PXlbhtcttFZQJdkUXioACG3mGfLnr3IGXDWdeSMBfPvJHhu8vFFCm3mxn/adg7f503wCgqiB3Fam6fcAAAAASUVORK5CYII="
 												/>
 											</button>
 										</li>
 										<li>
-											<button>
+											<button id="reviseButton">
 												<svg
 													xmlns="http://www.w3.org/2000/svg"
 													x="0px"
@@ -138,7 +138,7 @@
 											</button>
 										</li>
 										<li>
-											<button>
+											<button id="deleteButton">
 												<svg
 													xmlns="http://www.w3.org/2000/svg"
 													x="0px"
@@ -177,6 +177,10 @@
 							</li>
 						{{/each}}
 					</ul>
+				</div>
+
+				<div id="alert">
+					<p> Task completata con successo </p>
 				</div>
 
 			</div>

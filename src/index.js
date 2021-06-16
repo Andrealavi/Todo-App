@@ -46,6 +46,19 @@ app.get("/homepage/:id", async (req, res) => {
 
 app.get("/homepage/:id/task", (req, res) => res.render("task"));
 
+app.get("/homepage/:userId/taskPanel/:taskId", (req, res) =>
+	res.render("taskControlPanel")
+);
+
+app.get("/homepage/:userId/task/:taskId", async (req, res) => {
+	const task = await new Task().findTask(req.params.taskId);
+
+	res.render("taskView", {
+		title: task.title,
+		description: task.description,
+	});
+});
+
 app.post("/login", async (req, res) => {
 	const userLogin = await new User().login(req.body.email, req.body.password);
 
@@ -75,6 +88,31 @@ app.post("/task", async (req, res) => {
 		req.body.title,
 		req.body.description,
 		req.body.userId
+	);
+
+	res.redirect(`/homepage/${req.body.userId}`);
+});
+
+app.post("/task/:id", async (req, res) => {
+	const task = await new Task().findTask(req.params.id);
+
+	res.send(
+		JSON.stringify({
+			title: task.title,
+			description: task.description,
+		})
+	);
+});
+
+app.delete("/task/:id", async (req, res) => {
+	await new Task().deleteTask(req.params.id);
+});
+
+app.patch("/task/:id", async (req, res) => {
+	await new Task().updateTask(
+		req.params.id,
+		req.body.title,
+		req.body.description
 	);
 
 	res.redirect(`/homepage/${req.body.userId}`);

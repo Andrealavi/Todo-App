@@ -1,0 +1,44 @@
+<html lang="en">
+	<head>
+
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link
+			rel="stylesheet"
+			type="text/css"
+			href="/style/taskControlPanel.css"
+		/>
+		<title> Todo App </title>
+
+	</head>
+	<body>
+
+		<div id="task-box">
+			<div id="task-form">
+				<h1> Revise your task </h1>
+
+				<form>
+					<label for="title"> Titolo: </label>
+					<input
+						type="text"
+						id="taskTitle"
+						name="title"
+						placeholder="Titolo task..."
+					/>
+
+					<label for="description"> Descrizione: </label>
+					<textarea
+						name="description"
+						id="taskDescription"
+						cols="30"
+						rows="10"
+					></textarea>
+
+					<button id="taskButton"> Crea Task </button>
+				</form>
+			</div>
+		</div>
+
+		<script src="/js/taskControlPanel.js"></script>
+	</body>
+</html>

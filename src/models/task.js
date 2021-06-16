@@ -37,11 +37,48 @@ class Task {
 				resolve(
 					result.map(task => {
 						return {
+							id: task.taskId,
 							title: task.title,
 							description: task.description,
 						};
 					})
 				);
+			});
+		});
+	};
+
+	deleteTask = taskId => {
+		return new Promise((resolve, reject) => {
+			const insertion = `DELETE FROM tasks WHERE taskId = "${taskId}"`;
+
+			db.query(insertion, err => {
+				if (err) reject(err);
+
+				resolve();
+			});
+		});
+	};
+
+	findTask = taskId => {
+		return new Promise((resolve, reject) => {
+			const insertion = `SELECT * FROM tasks WHERE taskId = "${taskId}"`;
+
+			db.query(insertion, (err, result) => {
+				if (err) reject(err);
+
+				resolve(result[0]);
+			});
+		});
+	};
+
+	updateTask = (taskId, newTitle, newDescription) => {
+		return new Promise((resolve, reject) => {
+			const insertion = `UPDATE tasks SET title = "${newTitle}", description = "${newDescription}" WHERE taskId = "${taskId}"`;
+
+			db.query(insertion, err => {
+				if (err) reject(err);
+
+				resolve();
 			});
 		});
 	};
