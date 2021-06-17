@@ -1,0 +1,140 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap");
+
+html {
+	font-size: 16px;
+	box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+	box-sizing: inherit;
+}
+
+body {
+	overflow: hidden;
+	font-family: "Noto Sans", sans-serif;
+	background-color: rgb(105, 40, 179);
+}
+
+input {
+	border: none;
+	border-radius: 4px;
+	outline: none;
+	font-size: 14px;
+	padding: 8px;
+	margin: 32px;
+	margin-bottom: 8px;
+	margin-top: 16px;
+	width: 85%;
+	box-shadow: 0px 0px 15px 0px rgb(221, 210, 210);
+}
+
+input:focus {
+	outline: none;
+	box-shadow: 0px 0px 10px 4px rgb(221, 210, 210);
+}
+
+#reviseButton {
+	border-radius: 32px;
+	width: 100%;
+	border: none;
+	padding: 8px;
+	background: rgb(140, 66, 224);
+	font-weight: bold;
+	color: #eee5e5;
+	font-size: 16px;
+	box-shadow: 0px 0px 8px 6px rgb(221, 210, 210);
+	margin: 32px;
+}
+
+#reviseButton:hover {
+	box-shadow: 0px 0px 6px 6px rgb(207, 205, 205);
+}
+
+#reviseButton:disabled {
+	background-color: rgb(172, 146, 202);
+	box-shadow: none;
+}
+
+#backButton {
+	border-radius: 32px;
+	width: 100%;
+	border: none;
+	padding: 8px;
+	background: #f7f7fa;
+	color: #1f1f1f;
+	font-weight: bold;
+	font-size: 16px;
+	margin: 32px;
+}
+
+#backButton:hover {
+	box-shadow: 0px 0px 8px 6px rgb(221, 210, 210);
+}
+
+h1 {
+	text-align: center;
+	margin-left: 42px;
+}
+
+h2 {
+	margin-top: 32px;
+	margin-left: 32px;
+}
+
+p {
+	margin-bottom: 32px;
+	margin-left: 32px;
+}
+
+#task-box {
+	height: 100vh;
+	width: 100vw;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#task-form {
+	background: #f7f7fa;
+	border: none;
+	border-radius: 8px;
+	width: 500px;
+	box-shadow: 0px 0px 15px 1px rgb(54, 35, 65);
+}
+
+#buttons {
+	display: flex;
+}
+
+#title {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#editUser {
+	border: none;
+	margin: 16px;
+	background: #f7f7fa;
+	border-radius: 8px;
+	padding: 4px;
+}
+
+#editUser:hover {
+	box-shadow: 0px 0px 20px 1px #c0bbbb;
+}
+
+#informations {
+	padding: 16px 25px 25px 25px;
+	display: block;
+}
+
+#err {
+	font-size: 12px;
+	color: red;
+	text-align: left;
+	font-weight: bold;
+	margin-bottom: 16px;
+}

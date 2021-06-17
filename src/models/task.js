@@ -39,7 +39,6 @@ class Task {
 						return {
 							id: task.taskId,
 							title: task.title,
-							description: task.description,
 						};
 					})
 				);
@@ -79,6 +78,25 @@ class Task {
 				if (err) reject(err);
 
 				resolve();
+			});
+		});
+	};
+
+	searchTask = title => {
+		return new Promise((resolve, reject) => {
+			const insertion = `SELECT * FROM tasks WHERE title LIKE "${title}%"`;
+
+			db.query(insertion, (err, result) => {
+				if (err) reject(err);
+
+				resolve(
+					result.map(task => {
+						return {
+							id: task.id,
+							title: task.title,
+						};
+					})
+				);
 			});
 		});
 	};

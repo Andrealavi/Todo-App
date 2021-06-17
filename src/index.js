@@ -39,7 +39,11 @@ app.get("/registration", (req, res) => {
 });
 
 app.get("/homepage/:id", async (req, res) => {
-	const tasks = await new Task().listTasks(req.params.id);
+	let tasks;
+
+	if (req.query.title && req.query.title !== "")
+		tasks = await new Task().searchTask(req.query.title);
+	else tasks = await new Task().listTasks(req.params.id);
 
 	res.render("homepage", { tasks: tasks });
 });
@@ -57,6 +61,12 @@ app.get("/homepage/:userId/task/:taskId", async (req, res) => {
 		title: task.title,
 		description: task.description,
 	});
+});
+
+app.get("/homepage/:id/userPanel", async (req, res) => {
+	const user = await new User().findUser(req.params.id);
+
+	res.render("userPanel", { username: user.username, email: user.email });
 });
 
 app.post("/login", async (req, res) => {
@@ -113,6 +123,17 @@ app.patch("/task/:id", async (req, res) => {
 		req.params.id,
 		req.body.title,
 		req.body.description
+	);
+
+	res.redirect(`/homepage/${req.body.userId}`);
+});
+
+app.patch("/user/:id", async (req, res) => {
+	await new User().updateUser(
+		req.body.userId,
+		req.body.username,
+		req.body.email,
+		req.body.password
 	);
 
 	res.redirect(`/homepage/${req.body.userId}`);

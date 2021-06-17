@@ -1,4 +1,6 @@
 const taskButton = document.querySelector("#taskButton");
+const userButton = document.querySelector("#userButton");
+const searchButton = document.querySelector(".searchButton");
 const deleteButtons = document.querySelectorAll("#deleteButton");
 const completedButtons = document.querySelectorAll("#completedButton");
 const reviseButtons = document.querySelectorAll("#reviseButton");
@@ -7,6 +9,18 @@ const alert = document.querySelector("#alert");
 
 taskButton.addEventListener("click", () => {
 	window.location.href += "/task";
+});
+
+userButton.addEventListener("click", () => {
+	window.location.href += "/userPanel";
+});
+
+searchButton.addEventListener("click", e => {
+	e.preventDefault();
+
+	const search = document.querySelector("#searchInput").value;
+
+	window.location.href = document.referrer + `?title=${search}`;
 });
 
 for (const deleteButton of deleteButtons) {

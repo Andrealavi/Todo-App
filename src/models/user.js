@@ -66,6 +66,38 @@ class User {
 			});
 		});
 	};
+
+	findUser = userId => {
+		return new Promise((resolve, reject) => {
+			const insertion = `SELECT * FROM users WHERE userId = "${userId}"`;
+
+			db.query(insertion, (err, result) => {
+				if (err) reject(err);
+
+				resolve(result[0]);
+			});
+		});
+	};
+
+	updateUser = (userId, newUsername, newEmail, newPassword) => {
+		return new Promise((resolve, reject) => {
+			let insertion;
+
+			if (newPassword !== "")
+				insertion = `UPDATE users SET username = "${newUsername}", email = "${newEmail}", password = "${bcrypt.hashSync(
+					newPassword,
+					8
+				)}" WHERE userId = "${userId}"`;
+			else
+				insertion = `UPDATE users SET username = "${newUsername}", email = "${newEmail}" WHERE userId = "${userId}"`;
+
+			db.query(insertion, err => {
+				if (err) reject(err);
+
+				resolve();
+			});
+		});
+	};
 }
 
 module.exports = User;

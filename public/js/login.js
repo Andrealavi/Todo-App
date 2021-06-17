@@ -19,7 +19,7 @@ const emailValidation = () => {
 	} else {
 		emailInput.classList.remove("validEmail");
 		emailInput.classList.add("invalidEmail");
-		validEmail = falses;
+		validEmail = false;
 	}
 };
 
