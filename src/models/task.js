@@ -2,9 +2,9 @@ const mysql = require("mysql2");
 const { v1: uuidv1 } = require("uuid");
 
 const db = mysql.createConnection({
-	host: "localhost",
-	user: "root",
-	password: "admin123",
+	host: process.env.HOST,
+	user: process.env.USER,
+	password: process.env.PASSWORD,
 });
 
 db.query("USE ProgettiNode", err => {
