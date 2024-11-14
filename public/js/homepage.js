@@ -12,7 +12,16 @@ taskButton.addEventListener("click", () => {
 });
 
 userButton.addEventListener("click", () => {
-	window.location.href += "/userPanel";
+	let split_href = window.location.href.split("/");
+
+	let id = split_href[4];
+
+	if (split_href[4].split("?").length > 1) {
+		id = split_href[4].split("?")[0];
+	}
+
+	window.location.href =
+		split_href.slice(0, 4).join("/") + "/" + id + "/userPanel";
 });
 
 searchButton.addEventListener("click", e => {
@@ -20,7 +29,17 @@ searchButton.addEventListener("click", e => {
 
 	const search = document.querySelector("#searchInput").value;
 
-	window.location.href = document.referrer + `?title=${search}`;
+	let title = `?title=${search}`;
+
+	let split_href = window.location.href.split("/");
+
+	let id = split_href[4];
+
+	if (split_href[4].split("?").length > 1) {
+		id = split_href[4].split("?")[0];
+	}
+
+	window.location.href = split_href.slice(0, 4).join("/") + "/" + id + title;
 });
 
 for (const deleteButton of deleteButtons) {
@@ -70,9 +89,20 @@ for (const reviseButton of reviseButtons) {
 			reviseButton.parentNode.parentNode.parentNode.parentNode.getAttribute(
 				"taskId"
 			);
-		console.log(taskId);
 
-		window.location.href += `/taskPanel/${taskId}`;
+		let split_href = window.location.href.split("/");
+
+		let id = split_href[4];
+
+		if (split_href[4].split("?").length > 1) {
+			id = split_href[4].split("?")[0];
+		}
+
+		window.location.href =
+			split_href.slice(0, 4).join("/") +
+			"/" +
+			id +
+			`/taskPanel/${taskId}`;
 	});
 }
 
@@ -82,6 +112,15 @@ for (const task of tasks) {
 
 		const taskId = task.getAttribute("TaskId");
 
-		window.location.href += `/task/${taskId}`;
+		let split_href = window.location.href.split("/");
+
+		let id = split_href[4];
+
+		if (split_href[4].split("?").length > 1) {
+			id = split_href[4].split("?")[0];
+		}
+
+		window.location.href =
+			split_href.slice(0, 4).join("/") + "/" + id + `/task/${taskId}`;
 	});
 }
