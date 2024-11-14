@@ -34,8 +34,8 @@ A simple todo web app made using javascript and ExpressJS
    - Run the following SQL commands to create the `users` and `tasks` tables:
 
      ```sql
-     -- Switch to the ProgettiNode database
-     USE ProgettiNode;
+     -- Switch to the DatabaseName database
+     USE DatabaseName;
 
      -- Create the users table
      CREATE TABLE users (
